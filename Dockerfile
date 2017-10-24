@@ -1,4 +1,4 @@
-FROM registry.houbank.net/library/java:8-jre
+FROM vertigomedia/ubuntu-jdk8
 MAINTAINER Wang Kun
 RUN apt-get update \
 	&& apt-get install -y python2.7 
