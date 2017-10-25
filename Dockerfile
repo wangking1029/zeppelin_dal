@@ -3,7 +3,7 @@ MAINTAINER Wang Kun
 WORKDIR /
 RUN  apt-get install -y python-software-properties debconf-utils \
 	&& add-apt-repository -y ppa:webupd8team/java \
-	&& apt-get update
+	&& apt-get update \
 	&& echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | debconf-set-selections \
 	&& apt-get install -y oracle-java8-installer
 #RUN wget http://archive.apache.org/dist/zeppelin/zeppelin-0.7.2/zeppelin-0.7.2-bin-all.tgz \
