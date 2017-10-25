@@ -1,9 +1,8 @@
 FROM jjanzic/docker-python3-opencv:contrib-opencv-3.3.0
 MAINTAINER Wang Kun
-RUN \
-	echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections \
-	&& apt-get update \
-	&& apt-get install -y software-properties-common
+RUN	wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" \
+		http://download.oracle.com/otn-pub/java/jdk/8u151-b12/e758a0de34e24606bca991d704f6dcbf/jdk-8u151-linux-x64.tar.gz
+	
 #	add-apt-repository -y ppa:webupd8team/java && \
 #	apt-get update && \
 #	apt-get install -y oracle-java8-installer && \
