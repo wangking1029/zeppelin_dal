@@ -1,6 +1,5 @@
-FROM vertigomedia/ubuntu-jdk8
+FROM janza/docker-python3-opencv
 MAINTAINER Wang Kun
-RUN apt-get update \
-	&& apt-get install -y python2.7 
-RUN apt-get install -y python-pip python-dev build-essential
-
+WORKDIR /
+RUN wget http://archive.apache.org/dist/zeppelin/zeppelin-0.7.2/zeppelin-0.7.2-bin-all.tgz \
+	tar zxvf zeppelin-0.7.2-bin-all.tgz
