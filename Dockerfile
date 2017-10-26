@@ -8,6 +8,8 @@ RUN	wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie
 	&& tar -xzf zeppelin-0.7.2-bin-all.tgz \
 	&& mv /zeppelin-0.7.2-bin-all /zeppelin \
 	&& rm /zeppelin/interpreter/jdbc/zeppelin-jdbc-0.7.2.jar \
+	&& rm /zeppelin-0.7.2-bin-all.tgz
+	&& rm /jdk-8u151-linux-x64.tar.gz
 	&& pip3 install tensorflow \
 		selectivesearch \
 		matplotlib \
@@ -15,3 +17,4 @@ RUN	wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie
 COPY interpreter/jdbc/zeppelin-jdbc-0.7.2.jar /zeppelin/interpreter/jdbc
 ENV JAVA_HOME /java
 ENV PATH $JAVA_HOME/bin:$PATH
+CMD /zeppelin/bin/zeppelin-daemon.sh start
