@@ -17,4 +17,4 @@ RUN	wget --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie
 COPY interpreter/jdbc/zeppelin-jdbc-0.7.2.jar /zeppelin/interpreter/jdbc
 ENV JAVA_HOME /java
 ENV PATH $JAVA_HOME/bin:$PATH
-CMD /zeppelin/bin/zeppelin-daemon.sh start
+CMD /zeppelin/bin/zeppelin.sh start
